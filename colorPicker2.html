@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Luctus venenatis lectus magna fringilla urna porttitor. Suspendisse potenti nullam ac tortor
+            vitae purus faucibus. Faucibus interdum posuere lorem ipsum dolor. Pellentesque massa placerat duis ultricies
+            lacus sed. Scelerisque varius morbi enim nunc faucibus. Vel orci porta non pulvinar neque. Cras semper auctor
+            neque vitae tempus quam pellentesque nec nam. Convallis convallis tellus id interdum velit laoreet id donec
+            ultrices. Tortor pretium viverra suspendisse potenti nullam ac. Nulla porttitor massa id neque. Odio
+            pellentesque diam volutpat commodo sed egestas egestas. Eleifend mi in nulla posuere sollicitudin aliquam
+            ultrices sagittis orci. Turpis in eu mi bibendum. Non sodales neque sodales ut etiam sit. Aliquet nibh
+            praesent tristique magna sit. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Feugiat
+            scelerisque varius morbi enim. Volutpat ac tincidunt vitae semper quis lectus nulla at. Eleifend donec
+            pretium vulputate sapien nec sagittis. Fringilla ut morbi tincidunt augue interdum velit euismod in. Tempor
+            commodo ullamcorper a lacus vestibulum sed arcu non odio. Urna nunc id cursus metus aliquam eleifend mi in
+            nulla. In dictum non consectetur a erat. Cursus turpis massa tincidunt dui ut ornare lectus. Dictumst
+            vestibulum rhoncus est pellentesque. Cras semper auctor neque vitae tempus quam pellentesque. Pulvinar
+            pellentesque habitant morbi tristique senectus et netus et malesuada. Nulla pharetra diam sit amet nisl
+            suscipit. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Nibh sit amet commodo nulla
+            facilisi nullam vehicula. Sed sed risus pretium quam vulputate. Faucibus turpis in eu mi bibendum neque
+            egestas congue. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc. Nunc mi ipsum
+            faucibus vitae. Ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Quam viverra orci sagittis eu
+            volutpat odio facilisis. Cursus metus aliquam eleifend mi. Aenean pharetra magna ac placerat vestibulum lectus.
+            Hac habitasse platea dictumst quisque sagittis purus sit. Aliquam nulla facilisi cras fermentum odio eu
+            feugiat pretium nibh. Porttitor massa id neque aliquam vestibulum. Libero volutpat sed cras ornare. Porta
+            lorem mollis aliquam ut porttitor leo a diam sollicitudin. Metus aliquam eleifend mi in nulla posuere
+            sollicitudin aliquam ultrices. Dui id ornare arcu odio ut sem. Viverra maecenas accumsan lacus vel facilisis
+            volutpat. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Bibendum ut tristique et egestas
+            quis ipsum suspendisse ultrices. Orci dapibus ultrices in iaculis nunc sed augue lacus. Est lorem ipsum dolor
+            sit amet consectetur adipiscing elit pellentesque. Elementum curabitur vitae nunc sed velit dignissim sodales.
+            Nunc non blandit massa enim. Egestas sed tempus urna et pharetra pharetra massa massa. Euismod nisi porta
+            lorem mollis aliquam ut. Aliquam sem fringilla ut morbi tincidunt. Hac habitasse platea dictumst quisque.
+            Tortor at auctor urna nunc. Ultrices vitae auctor eu augue ut lectus arcu. Sed id semper risus in hendrerit
+            gravida rutrum quisque. Sem nulla pharetra diam sit amet nisl. Egestas erat imperdiet sed euismod nisi porta
+            lorem mollis. Posuere urna nec tincidunt praesent semper feugiat nibh. Turpis cursus in hac habitasse platea.
+            Et netus et malesuada fames ac turpis. Vitae congue eu consequat ac felis donec et. Lorem ipsum dolor sit
+            amet consectetur adipiscing. Sed odio morbi quis commodo. Tincidunt praesent semper feugiat nibh sed. Id
+            consectetur purus ut faucibus pulvinar elementum integer enim neque. Quam lacus suspendisse faucibus interdum.
+            Eu sem integer vitae justo eget magna fermentum. Mattis nunc sed blandit libero volutpat sed cras ornare.
+            Tincidunt arcu non sodales neque sodales ut. In nisl nisi scelerisque eu ultrices vitae. Ut sem nulla pharetra
+            diam sit amet.</p>
+        <div class="row">
+            <h3>Background</h3>
+            <input type="color" id="bg" value="#FFFFFF">
+        </div>
+        <div class="row">
+            <h3>Text!</h3>
+            <input type="color" id="txt">
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    const bg = document.getElementById('bg');
+    const txt = document.getElementById('txt');
+    const clear = document.getElementById('clear');
+
+    bg.addEventListener('change', function(e){
+        content.style.backgroundColor=e.target.value;
+    });
+
+    txt.addEventListener('change', function(e){
+        content.style.color=e.target.value;
+    });
+
+    clear.addEventListener('click', function (e) {
+        content.style.backgroundColor = '#ffbf8d';
+        bg.value = '#ffbf8d';
+        content.style.color = 'black';
+        bg.value = '#000000';
+    })
+</script>
+</body>
+</html>
