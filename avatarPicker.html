@@ -2,35 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>avatar Picker</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Avatar Chooser</title>
 </head>
 <body>
 <div class="container">
     <div class="content">
-        <h2>Avatar Choices!</h2>
         <div class="row">
-            <button id="avatar1" >Avatar 1</button>
-            <button id="avatar2">Avatar 2</button>
-            <button id="avatar3">Avatar 3</button>
-            <button id="avatar4">Avatar 4</button>
-            <button id="avatar5">Avatar 5</button>
-            <button id="avatar6">Avatar 6</button>
+            <img class="picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk9mSVg5qHniKQkwVws13K4oJvL4L7yHIRIVpzpgXulQ&usqp=CAU&ec=48600113" alt="Picture of a blank avatar">
         </div>
+        <h3>Avatar Choices</h3>
+        <div class="row">
+            <button id="1">AVATAR 1</button>
+            <button id="2">AVATAR 2</button>
+            <button id="3">AVATAR 3</button>
+            <button id="4">AVATAR 4</button>
+            <button id="5">AVATAR 5</button>
+            <button id="6">AVATAR 6</button>
+        </div>
+        <button id="clear">CLEAR</button>
     </div>
 </div>
 <script>
-    const content = document.querySelector('.content');
-    const picture = document.getElementById("id");
-    const clear = document.getElementById('clear');
-
-    picture.addEventListener('change', function(e){
-        picture.src='data:image/png;base64,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';
+    const picture = document.querySelector('.picture');
+    const avatar1 = document.getElementById('1');
+    const avatar2 = document.getElementById('2');
+    const avatar3 = document.getElementById('3');
+    const avatar4 = document.getElementById('4');
+    const avatar5 = document.getElementById('5');
+    const avatar6 = document.getElementById('6');
+    const clearButton = document.getElementById('clear');
+    avatar1.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWhSPTVpxxQcbhHqgwQ8CNlPcKAZgHI0NxU0CNzyQ0hg&usqp=CAU&ec=48600113";
     });
 
-    clear.addEventListener('click', function (e) {
+    avatar2.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_XJZYZH_W5kzGeqGTlFSjPUCTi6lj3hHVIgKZ4RsWtg&usqp=CAU&ec=48600113";
+    });
+    avatar3.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhcld9bGtNfaoJRZTaRDGgN-saabNAkJnFXdwKDFTeuQ&usqp=CAU&ec=48600113";
+    });
+    avatar4.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvW_hG8HDRuVgk8q6TJCXkt-hYLea7xE2BYAdILki00A&usqp=CAU&ec=48600113";
+    });
+    avatar5.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxdidwws4IBQVDIhYObVIhKacVjQLdSTyIHkWWPA0FSw&usqp=CAU&ec=48600113";
+    });
+    avatar6.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaC4h2UQNNHRVhhmCBSreRF24T1hAq3gq7X98pt1ZeiA&usqp=CAU&ec=48600113";
+    });
+    clear.addEventListener('click', function(e){
+        picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk9mSVg5qHniKQkwVws13K4oJvL4L7yHIRIVpzpgXulQ&usqp=CAU&ec=48600113";
+    });
 
-    })
 </script>
 </body>
 </html>

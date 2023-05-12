@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Color Picker</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .black{
+            background-color: black;
+        }
+        .lightGray{
+            background-color: lightgray;
+        }
+        .cornSilk{
+            background-color: cornsilk;
+        }
+
+        .pink{
+            color: pink;
+        }
+        .teal{
+            color: teal;
+        }
+        .purple{
+            color: purple;
+        }
+        .paleGreen{
+            color: palegreen;
+        }
+        .lavenderBlush{
+            color: lavenderblush;
+        }
+        .maroon{
+            color: maroon;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p>HEAR YE, HEAR YE, HEAR YE, THE SUPREME COURT OF FLORIDA IS NOW IN SESSION, ALL WHO HAVE CAUSE TO PLEAD, DRAW NEAR, GIVE ATTENTION AND YOU SHALL BE HEARD. GOD SAVE THESE UNITED STATES, THE GREAT STATE OF FLORIDA AND THIS HONORABLE COURT. >> LADIES AND GENTLEMEN, THE SUPREME COURT OF FLORIDA, PLEASE BE SEATED. >></p>
+        <div class="row">
+            <h3>Background</h3>
+            <button id="1">RED</button>
+            <button id="2">GREEN</button>
+            <button id="3">BLUE</button>
+            <button id="4">BLACK</button>
+            <button id="5">LIGHT GRAY</button>
+            <button id="6">CORN SILK</button>
+        </div>
+        <div class="row">
+            <h3>Text</h3>
+            <button id="7">PINK</button>
+            <button id="8">TEAL</button>
+            <button id="9">PURPLE</button>
+            <button id="10">PALE GREEN</button>
+            <button id="11">LAVENDER BLUSH</button>
+            <button id="12">MAROON</button>
+        </div>
+        <button id="clear">CLEAR</button>
+    </div>
+</div>
+<script>
+    const content = document.querySelector('.content');
+    const red = document.getElementById('1');
+    const green = document.getElementById('2');
+    const blue = document.getElementById('3');
+    const black = document.getElementById('4');
+    const lightGray = document.getElementById('5');
+    const cornSilk = document.getElementById('6');
+
+    const pink = document.getElementById('7');
+    const teal = document.getElementById('8');
+    const purple = document.getElementById('9');
+    const paleGreen = document.getElementById('10');
+    const lavenderBlush = document.getElementById('11');
+    const maroon = document.getElementById('12');
+
+    const clearButton = document.getElementById('clear');
+
+
+    red.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('red');
+    });
+    green.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('green');
+    });
+    blue.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('blue');
+    });
+    black.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('black');
+    });
+    lightGray.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('lightGray');
+    });
+    cornSilk.addEventListener('click', function(e){
+        removeBGColor();
+        content.classList.add('cornSilk');
+    });
+
+
+    pink.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('pink');
+    });
+    teal.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('teal');
+    });
+    purple.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('purple');
+    });
+    paleGreen.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('paleGreen');
+    });
+    lavenderBlush.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('lavenderBlush');
+    });
+    maroon.addEventListener('click', function(e){
+        removeTextColor();
+        content.classList.add('maroon');
+    });
+
+
+    clearButton.addEventListener('click', function(e){
+        removeTextColor();
+        removeBGColor();
+    });
+
+
+    function removeBGColor(){
+        content.classList.remove('red');
+        content.classList.remove('green');
+        content.classList.remove('blue');
+        content.classList.remove('black');
+        content.classList.remove('lightGray');
+        content.classList.remove('cornSilk');
+    }
+    function removeTextColor(){
+        content.classList.remove('pink');
+        content.classList.remove('teal');
+        content.classList.remove('purple');
+        content.classList.remove('paleGreen');
+        content.classList.remove('lavenderBlush');
+        content.classList.remove('maroon');
+    }
+</script>
+</body>
+</html>
