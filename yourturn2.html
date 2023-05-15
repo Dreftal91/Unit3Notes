@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h3>Generator</h3>
+        <div class="row">
+            <div>
+                <label for="list">list item</label>
+                <input type="text" id="list" name="list" style="width: 100px">
+            </div>
+        </div>
+        <form>
+            <button>clear</button>
+        </form>
+        <button id="add">Add</button>
+        <div class="text">
+            <a src="yourturn2.html" href="yourturn2.html">
+                <ul></ul>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    const text = document.querySelector('.text');
+    const list = document.getElementById('list');
+    const add = document.getElementById('add');
+
+    add.addEventListener('click', function(e) {
+        listitem = list.value;
+
+        const message = document.createElement('li');
+        message.innerHTML = `${listitem}`;
+        text.insertAdjacentElement('afterbegin', message);
+    });
+    if (text.click) 
+</script>
+</body>
+</html>
