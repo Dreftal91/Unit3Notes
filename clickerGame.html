@@ -33,7 +33,7 @@
             <div class="row">
                 <fieldset>
                     <legend><h3><bold>Shop!</bold></h3></legend>
-                    <div class="hidden" id="2xboost">
+                    <div class="hidden" class="hiddenstuff" id="2xboost">
                         <button id="2x">2x Boost</button>
                         <p id="boostscore" class="hidden">0</p>
                     </div>
@@ -50,19 +50,32 @@
     const twoxboostbutton = document.getElementById('2x');
     let score = document.getElementById('score');
     let twoboostbuttonscore = document.getElementById('boostscore');
+    let boostscore = document.getElementById('boostscore');
+    let boostedscore = score*boostscore;
+    let hiddenstuff = document.querySelector('.hiddenstuff');
+    
+    twoboostbuttonscore.addEventListener('click', function (e) {
+         boostscore++;
+    });
 
     content.addEventListener('click', function (e) {
-        if (score <! 5) {
+        if (score < 5) {
             hiddenstuff = document.getElementById("2xboost").className = "hidden";
             scoreplace.innerHTML = `<h4 id="score">${score}</h4>`;
         }
     });
 
     score = 0;
-    levelupbutton.addEventListener('click', function (e) {
+    levelupbutton.addEventListener('click', levelupbuttonfunction);
+
+    function levelupbuttonfunction () {
 
         score++;
         scoreplace.innerHTML = `<h4 id="score">${score}</h4>`;
+
+        if (boostscore >= 1) {
+            score = score*boostedscore;
+        }
 
         if (score >= 16) {
             picture.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmzDlupgcbmm8ULArVnwFtSTcAABziUQ5vYw&usqp=CAU";
@@ -76,12 +89,15 @@
             content.innerHTML = `<h3>You Won!</h3>`;
         }
 
-        if (score == 5) {
+        if (score >= 5) {
             hiddenstuff = document.getElementById("2xboost").className = "unhidden";
+        } else if (score <= 4) {
+            hiddenstuff = document.getElementById("2xboost").className = "hidden";
         }
-    });
+    }
     twoxboostbutton.addEventListener('click', function (e) {
-        score -= 50;
+        score -= 5;
+
         scoreplace.innerHTML = `<h4 id="score">${score}</h4>`;
 
         if (score >= 16) {
